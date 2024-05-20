@@ -1,0 +1,8 @@
+{% for category in showCategorys %}
+
+    <p>{{ category.naam }}</p>
+{#    <p>{{ category.image }}</p>#}
+    <p>{{ category.description }}</p>
+    <a href="{{ path('app_show_producten', {id:category.id}) }}">show</a>
+
+{% endfor %}

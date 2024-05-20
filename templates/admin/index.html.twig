@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    {% for medewerkers in showMedewerkers %}
+
+
+        Medewerker Naam : <p>{{ medewerkers.fname }}</p>
+
+        Medewerker Email :  <p>{{ medewerkers.email }}</p>
+
+        Medewerker Adres :  <p>{{ medewerkers.adres }}</p>
+
+        Medewerker Phone :  <p>{{ medewerkers.phone }}</p>
+
+        <a href="{{ path('edit_employee', {id: medewerkers.id}) }}">update</a>
+        <a href="{{ path('delete_employee', {id: medewerkers.id}) }}">delete</a>
+    {% endfor %}
+    <a href="{{ path('add_employee') }}">add</a>
+
+
+    {% for product in adminProduct %}
+
+        <p>{{ product.name }}</p>
+        {#    <p>{{ category.image }}</p>#}
+           <p>{{ product.prijs }}</p>
+        <p>{{ product.category.naam }}</p>
+        <a href="{{ path('edit_product', {id: product.id}) }}">update</a>
+
+
+
+
+    {% endfor %}
+    <a href="{{ path('add_product')}}">add</a>
+
+{% endblock %}
